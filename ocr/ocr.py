@@ -2,13 +2,12 @@ import pytesseract
 import cv2
 import pyscreenshot as ImageGrab
 import numpy as np
-import time
-cap = cv2.VideoCapture(-1)
+cap = cv2.VideoCapture(-1)      #replace with last lines for image
 cap.set(3, 640)
 cap.set(4, 480)
 
 
-def CaptureScreen(bbox=(300, 300, 1500, 1000)):
+def CaptureScreen(bbox=(300, 300, 1500, 1000)):      #<--- Use PIL for Windows
     capscr = np.array(ImageGrab.grab(bbox))
     capscr = cv2.cvtColor(capscr , cv2.COLOR_RGB2BGR)
     return capscr
@@ -31,6 +30,8 @@ while True:
 
 cv2.imshow('Image', img)
 cv2.waitkey(0)
+
+#Use below code for images
 # img = cv2.imread('sample.jpg')
 #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 #print(pytesseract.image_to_string(img))
