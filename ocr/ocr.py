@@ -2,7 +2,7 @@ import pytesseract
 import cv2
 import pyscreenshot as ImageGrab
 import numpy as np
-cap = cv2.VideoCapture(-1)      #replace with last lines for image
+cap = cv2.VideoCapture(-1)     
 cap.set(3, 640)
 cap.set(4, 480)
 
@@ -30,11 +30,6 @@ while True:
 
 cv2.imshow('Image', img)
 cv2.waitkey(0)
-
-#Use below code for images
-# img = cv2.imread('sample.jpg')
-#img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-#print(pytesseract.image_to_string(img))
 
 
 
